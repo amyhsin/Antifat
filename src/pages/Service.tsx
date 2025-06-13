@@ -18,10 +18,10 @@ function Service() {
     setPage(value);
   };
 
-  const paginatedArticles = articles.slice(
-    (page - 1) * PER_PAGE,
-    page * PER_PAGE
-  );
+  // const paginatedArticles = articles.slice(
+  //   (page - 1) * PER_PAGE,
+  //   page * PER_PAGE
+  // );
   return (
     <>
       <main id="service">
