@@ -1,0 +1,74 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.footer-info {
+  height: 60vh;
+  background-color: $color-dark;
+  @include flex-center;
+  flex-direction: column;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr;
+
+  .info {
+    @include flex-center;
+    width: 100%;
+    .business-hours {
+      flex: 1;
+      @include paragraph;
+      color: $color-light;
+      line-height: 1.5;
+      @include flex-center;
+      flex-direction: column;
+    }
+
+    .contact {
+      flex: 1;
+      @include paragraph;
+      @include flex-center;
+      color: $color-light;
+      flex-direction: column;
+      border-right: 1px solid $color-light;
+      border-left: 1px solid $color-light;
+      height: 65%;
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 10px 0;
+        .icon {
+          width: 26px;
+        }
+      }
+    }
+
+    .map {
+      flex: 1;
+      @include flex-center;
+      iframe {
+        width: 80%;
+        height: 40vh;
+      }
+    }
+  }
+
+  .social {
+    padding-top: 20px;
+    i {
+      font-size: 28px;
+      color: $color-light;
+      margin: 0 16px;
+      transition: all 0.3s ease-out;
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+.copyright {
+  background-color: $color-deep;
+  @include small;
+  color: $color-light;
+  height: 50px;
+  @include flex-center;
+}

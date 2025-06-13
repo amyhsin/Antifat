@@ -1,0 +1,213 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+#home-banner,
+#home-intro {
+  height: 100vh;
+}
+
+#home-banner {
+  padding-top: 70px;
+  .image-carousel {
+    height: 100%;
+    width: 100%;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    &__overlay {
+      height: calc(100% - 70px);
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      // height: 100%;
+      pointer-events: none;
+
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.5) 1%,
+        rgba(255, 255, 255, 0.2) 100%
+      );
+      z-index: 10;
+
+      .image-carousel__text {
+        pointer-events: auto;
+        padding: 40px;
+        color: $color-light;
+        position: absolute;
+        top: 50%;
+        left: 15%;
+        transform: translateY(-50%);
+
+        h1 {
+          font-size: 54px;
+          margin-bottom: 12px;
+          letter-spacing: 5px;
+        }
+        h2 {
+          font-size: 32px;
+          margin: 24px 0;
+          letter-spacing: 4px;
+        }
+        h3 {
+          font-size: 28px;
+          margin-bottom: 24px;
+          letter-spacing: 2px;
+        }
+
+        .divider {
+          // width: 100px;
+        }
+      }
+    }
+  }
+}
+
+#home-intro { 
+  background-image: url("/material/bg.jpg");
+  background-color: rgba(255, 251, 249, 0.2);
+  background-blend-mode: overlay;
+  padding: 0 90px;
+  @include flex-center;
+  .content {
+    display: flex;
+    gap: 20px;
+    .text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .title {
+        @include title-lg;
+      }
+      .name {
+        @include title-lg;
+        margin: 80px 0;
+      }
+      .paragraph {
+        @include paragraph;
+        color: $color-deep;
+        line-height: 1.5;
+      }
+    }
+    .photo {
+      flex: 1;
+    }
+  }
+}
+
+#home-main-services {
+  height: 50vh;
+  background-color: #edd2be;
+  padding: 0 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    .title {
+      @include title-lg;
+    }
+    .services {
+      display: flex;
+      gap: 20px;
+      .item {
+        flex: 1;
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        .text {
+          @include paragraph;
+          color: $color-deep;
+        }
+      }
+      .icon-container {
+        width: 60px;
+      }
+    }
+  }
+}
+
+#home-doctors {
+  background: linear-gradient(to right bottom, #fff 20%, $color-primary);
+  // background-image: radial-gradient(#e4d1c2, #fff9f4, #fffefd);
+  position: relative;
+  height: 60vh;
+  .text {
+    position: absolute;
+    top: 12%;
+    left: 6%;
+    // flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    gap: 50px;
+    .title {
+      @include title-lg;
+    }
+    .paragraph {
+      @include paragraph;
+      color: $color-deep;
+      line-height: 1.5;
+    }
+  }
+  .img-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+  }
+}
+
+#home-videos {
+  background-color: #fffbf9;
+  padding: 0 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    .title {
+      @include title-lg;
+    }
+    .videos {
+      display: flex;
+      gap: 15px;
+      .video-frame {
+        flex: 1;
+        iframe {
+          width: 100%;
+        }
+      }
+    }
+    .text {
+      @include title-sm;
+      color: $color-deep;
+      text-align: center;
+      p {
+        margin-top: 10px;
+      }
+    }
+  }
+}

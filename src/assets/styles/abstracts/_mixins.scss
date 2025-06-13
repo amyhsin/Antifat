@@ -1,0 +1,40 @@
+@use "../abstracts/variables" as *;
+
+@mixin title-lg {
+  font-size: 48px;
+  // font-weight: bold;
+  color: $color-deep;
+  letter-spacing: 1px;
+}
+
+@mixin title-md {
+  font-size: 32px;
+  // font-weight: bold;
+  // color: $color-deep;
+  letter-spacing: 1px;
+}
+
+@mixin title-sm {
+  font-size: 20px;
+  // font-weight: bold;
+  // color: $color-deep;
+  letter-spacing: 1px;
+}
+
+@mixin paragraph {
+  font-size: 16px;
+  // font-weight: 400;
+  // color: $color-deep;
+  letter-spacing: 1px;
+}
+
+@mixin small {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

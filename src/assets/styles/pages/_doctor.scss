@@ -1,0 +1,191 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+#doctor {
+  #doctor-title {
+    margin-top: 70px;
+    height: 35vh;
+    background-image: url("/material/title-background.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    .title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include title-md;
+      color: $color-deep;
+
+      .category {
+        h1 {
+          @include title-sm;
+        }
+      }
+      .name {
+        @include title-md;
+        text-align: center;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  #doctor-detail {
+    height: 100vh;
+    @include flex-center;
+    padding: 0 70px;
+    gap: 30px;
+    .avatar {
+      // flex: 1;
+      @include flex-center;
+      flex-direction: column;
+      .img-container {
+        width: 85%;
+      }
+      .name {
+        @include title-md;
+        color: $color-deep;
+        margin-top: 16px;
+      }
+    }
+    .info {
+      // flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      .title {
+        @include title-sm;
+        color: $color-deep;
+        margin-bottom: 10px;
+      }
+
+      .strength {
+        .items {
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+          .item {
+            @include paragraph;
+            background-color: $color-dark;
+            color: $color-light;
+            padding: 5px 10px;
+            border-radius: 99px;
+          }
+        }
+      }
+      .experience {
+        display: flex;
+        gap: 50px;
+        .desc {
+          @include paragraph;
+          color: $color-deep;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+
+  #time-table {
+    height: 65vh;
+    @include flex-center;
+    padding: 0 70px;
+    flex-direction: column;
+    background-color: #edd2be;
+    gap: 30px;
+    .title {
+      @include title-lg;
+    }
+    .time-table th,
+    td {
+      border: 3px solid $color-secondary;
+      font-size: 16px;
+      color: $color-deep;
+      font-family: "Arvo", "LXGW WenKai Mono TC";
+    }
+
+    .time-table {
+      width: 90%;
+    }
+
+    .btn {
+      button {
+        background-color: $color-dark;
+        border: none;
+        font-size: 16px;
+        color: $color-white;
+        padding: 12px 20px;
+        cursor: pointer;
+        transition: 0.3s all ease-in-out;
+
+        &:hover {
+          background-color: #9b785e;
+        }
+      }
+    }
+  }
+
+  #knowledge {
+    height: 65vh;
+    @include flex-center;
+    padding: 0 70px;
+    flex-direction: column;
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      width: 100%;
+      .title {
+        @include title-lg;
+      }
+      .articles {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        .article {
+          background-color: $color-primary;
+          height: 180px;
+          flex: 1;
+          // width: 300px;
+          position: relative;
+          cursor: pointer;
+          .topic {
+            background-color: $color-dark;
+            color: $color-white;
+            position: absolute;
+            top: 15px;
+            left: 0;
+            padding: 8px 10px;
+            border-bottom-right-radius: 99px;
+            border-top-right-radius: 99px;
+          }
+          .title {
+            position: absolute;
+            font-size: 24px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+
+      .btn {
+        button {
+          background-color: transparent;
+          border: $color-dark 2px solid;
+          font-size: 16px;
+          color: $color-dark;
+          padding: 12px 20px;
+          cursor: pointer;
+          transition: 0.3s all ease-in-out;
+
+          &:hover {
+            background-color: $color-dark;
+            color: $color-white;
+          }
+        }
+      }
+    }
+  }
+}
