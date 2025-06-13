@@ -1,12 +1,21 @@
-import docImg from "../assets/img/doctors/doc01.png";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import { useLocation } from "react-router-dom";
+const base = import.meta.env.BASE_URL;
 
 function Doctor() {
+  const location = useLocation();
+  console.log("path", location.pathname);
+  const imgNumArray = location.pathname.split("/");
+  const imgNum = imgNumArray[imgNumArray.length - 1];
+  console.log(imgNum);
+  const docImg = "doc" + imgNum;
+  console.log(docImg)
+
   return (
     <>
       <main id="doctor">
@@ -21,7 +30,7 @@ function Doctor() {
         <section id="doctor-detail">
           <div className="avatar">
             <div className="img-container">
-              <img src={docImg} alt="" />
+              <img src={`${base}doctors/doc${imgNum}.png`} alt="" />
             </div>
             <div className="name">蕭敦仁 院長</div>
           </div>

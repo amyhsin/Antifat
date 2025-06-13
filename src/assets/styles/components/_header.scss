@@ -12,7 +12,7 @@ header {
   z-index: 99;
   top: 0;
   left: 0;
-  background-color: $color-light;
+  background-color: $color-white;
   .logo {
     width: 40px;
   }
@@ -67,7 +67,7 @@ header {
 
       &:hover {
         background-color: #f8f8f8;
-        color: #a52a2a;
+        color: $color-dark;
       }
     }
   }

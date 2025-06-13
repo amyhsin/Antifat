@@ -86,12 +86,12 @@
   }
 
   #time-table {
-    height: 65vh;
+    height: 70vh;
     @include flex-center;
     padding: 0 70px;
     flex-direction: column;
     background-color: #edd2be;
-    gap: 30px;
+    gap: 25px;
     .title {
       @include title-lg;
     }
@@ -125,7 +125,7 @@
   }
 
   #knowledge {
-    height: 65vh;
+    height: 70vh;
     @include flex-center;
     padding: 0 70px;
     flex-direction: column;
@@ -134,7 +134,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 50px;
+      gap: 25px;
       width: 100%;
       .title {
         @include title-lg;
